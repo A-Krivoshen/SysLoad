@@ -1,4 +1,4 @@
-# -SysLoad
+# SysLoad
 Wordpress pulgin мониторинга выделенного сервера в реал тайм
 Создание плагина SysLoad для мониторинга сервера в WordPress
 
