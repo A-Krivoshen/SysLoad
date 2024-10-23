@@ -5,7 +5,6 @@ jQuery(document).ready(function($) {
     let networkOutData = [];
     let totalMemory = 0;
 
-    // Исправлены ID для совпадения с PHP
     const cpuChart = echarts.init(document.getElementById('cpu-load-container'));
     const memoryChart = echarts.init(document.getElementById('memory-usage-container'));
     const networkInChart = echarts.init(document.getElementById('network-in-container'));
@@ -14,10 +13,10 @@ jQuery(document).ready(function($) {
     const commonChartOptions = {
         backgroundColor: '#000000', // Черный фон для всех графиков
         grid: {
-            left: '15%',  // Увеличиваем отступ слева
-            right: '15%', // Увеличиваем отступ справа
-            top: '15%',   // Отступ сверху
-            bottom: '20%' // Увеличиваем отступ снизу
+            left: '20%',  // Увеличиваем отступы для всех сторон
+            right: '20%',
+            top: '15%',
+            bottom: '20%'
         },
         xAxis: {
             type: 'category',
@@ -28,7 +27,8 @@ jQuery(document).ready(function($) {
                 }
             },
             axisLabel: {
-                color: '#ffffff' // Белый цвет подписей оси X
+                color: '#ffffff', // Белый цвет подписей оси X
+                fontSize: 12,     // Размер шрифта, чтобы влезали цифры
             }
         },
         yAxis: {
@@ -39,7 +39,8 @@ jQuery(document).ready(function($) {
                 }
             },
             axisLabel: {
-                color: '#ffffff' // Белый цвет подписей оси Y
+                color: '#ffffff', // Белый цвет подписей оси Y
+                fontSize: 12,     // Размер шрифта для удобного отображения цифр
             }
         },
         series: [{
@@ -70,7 +71,7 @@ jQuery(document).ready(function($) {
             type: 'line',
             smooth: true,
             lineStyle: {
-                color: '#ff5733' // Красный график
+                color: '#ff5733' // Красный график для процессора
             }
         }]
     });
@@ -94,7 +95,7 @@ jQuery(document).ready(function($) {
             type: 'line',
             smooth: true,
             lineStyle: {
-                color: '#33ff57' // Зеленый график
+                color: '#33ff57' // Зеленый график для памяти
             }
         }]
     });
@@ -118,7 +119,7 @@ jQuery(document).ready(function($) {
             type: 'line',
             smooth: true,
             lineStyle: {
-                color: '#3398ff' // Синий график
+                color: '#3398ff' // Синий график для входящего трафика
             }
         }]
     });
@@ -142,7 +143,7 @@ jQuery(document).ready(function($) {
             type: 'line',
             smooth: true,
             lineStyle: {
-                color: '#ff33ff' // Розовый график
+                color: '#ff33ff' // Розовый график для исходящего трафика
             }
         }]
     });
